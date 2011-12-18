@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
+{% endblock %}
+
+{% block title %}
+{{ details.nickname }}
+{% endblock %}
+
+{% block content %}
+<div id="cnt">
+   <div id="msg">
+       <span> Hi, {{ details.nickname }}. Your IP {{ details.ip }} is marked <b>{{ details.status }}</b>.</span>
+       <span>
+           Access your IP at <a href="http://rydyrect.appspot.com/people/{{details.nickname}}/">http://rydyrect.appspot.com/people/{{details.nickname}}/</a>
+       </span>
+   </div>
+      <ul>
+         <li><a href="/update/" class="nav">Update IP</a></li>
+         <li><a href="/toggle/" class="nav">Toggle status(Go {% ifequal details.status "online" %} Offline {% else %} Online {% endifequal %})</a></li>
+         <li><a href="/logout/" class="nav">Logout(status is preserved)</a></li>
+      </ul>
+   </span>
+</div>
+{% endblock %}
+

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block css   %} <link rel="stylesheet" type="text/css" href="/css/home.css" /> {% endblock %}
+{% block title %} RyDyrect {% endblock %}
+
+{% block content %}
+<p>RyDyrect is a very small app that allows you to host a site on your local machine, while
+allowing others to access using a single URL. When you first log in using your Google Account, 
+the URL for you is created as {{ zieben_url }}people/your.google.nick/
+</p>
+<p>Now, by default, your IP is made offline, that is, RyDyrect won't redirect to it, UNLESS you
+sign in and go online by toggling your status. You may then log out, while others will be able
+to redirect to your IP just by going to {{ zieben_url }}people/your.google.nick/
+</p>
+<p>You may also want to update your IP after logging in if things don't work. I you have problems
+even after that, most likely you're sitting behind multiple proxies(A single proxy is okay), OR, 
+a router to which you haven't forwarded port 80.</p>
+
+<a href="{{ login_url }}" class="nav" style="margin-left: 30em;">Login(Google)</a>
+{% endblock %}
+{% block note %}
+<div class="notediv">
+Note: 
+<ul id="note">
+   <li>Only Google accounts for now, but a new user system is on its way.</li>
+   <li>Only Port 80 (HTTP) redirects for now. I plan to add arbitrary ports support
+   PLUS multiple redirects for the same user, with some form of URL mutilation.</li>
+</ul>
+</div>
+{% endblock %}
+
+
+{% block author %}
+{% endblock %}

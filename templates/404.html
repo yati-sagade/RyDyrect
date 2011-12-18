@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
+<style type="text/css">
+    #content {
+        background-color: #aa0000;
+        color: #fff;
+    }
+    a.nav{
+        color : #000;
+    }
+</style>
+{% endblock %}
+
+{% block title %}Page not found{% endblock %}
+
+{% block content %}
+The page you requested could not be found.
+<br /><ul><li><a href="/" class="nav">Go Back</a></li></ul>
+{% endblock %}

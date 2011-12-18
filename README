@@ -1,0 +1,18 @@
+RyDyrect is a simple web app I developed out of my own needs. :) 
+It is currently is hosted at http://rydyrect.appspot.com/
+
+More description can be found at http://rydyrect.appspot.com/
+
+Most of the directories in this project are required to run the Django ORM on 
+Appengine's DataStore, viz.,
+    i)   autoload
+    ii)  dbindexer
+    iii) django
+    iv)  djangoappengine
+    v)   djangotoolbox
+
+These are required to interface with the DataStore to provide a transparent
+ORM, identical to the one we're used to in Django. The collective name is
+Django-nonrel (for non-relational).
+
+

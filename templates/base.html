@@ -1,0 +1,56 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"
+    xml:lang="{% firstof LANGUAGE_CODE 'en' %}"
+    lang="{% firstof LANGUAGE_CODE 'en' %}">
+  <head>
+    <title>{% block title %}{% endblock %} - Ry-Dyrect </title>
+
+    {% block css %}
+    {% endblock %}
+
+    {% block preload_js %}
+    {% endblock %}
+
+    {% block extra-head %}{% endblock %}
+  </head>
+
+  <body>
+    <div id="header">
+       <a id="logo" href="/">R<b>y</b>-D<b>y</b>rect</a>
+    </div>
+
+    <div class="columns">
+      <div id="content" class="column">
+        {% block content-header %}
+          {% if error %}<div class="error">{{ error }}</div>{% endif %}
+          {% if info %}<div class="info">{{ info }}</div>{% endif %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="info">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+     </div>
+      {% block author %}{% endblock %}
+      <div id="sidebar" class="column">
+        {% block sidebar %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <div id="footer">
+      <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangojoint107x25_grey.gif" border="0" alt="A Django joint." title="A Django joint." /></a>
+       <a href="http://www.python.org/"><img src="/images/python.png" alt="Python Powered" /></a>
+       <p>Powered by <a href="http://www.allbuttonspressed.com/projects/django-nonrel" class="credit">Django-nonrel</a></p>
+       {% if not about_page %}  <a href="/about/" class="nav">About</a> {% endif %}
+    </div>
+   
+    {% block js %}
+    {% endblock %}
+  </body>
+</html>
